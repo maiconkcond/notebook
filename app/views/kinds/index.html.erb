@@ -1,27 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="basic-grey">
+  <p id="notice"><%= notice %></p>
 
-<h1>Kinds</h1>
+  <h1><%= "#{t('messages.listing')} #{ @kinds.model.model_name.human(count: @kinds.count)}" %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @kinds.each do |kind| %>
-      <tr>
-        <td><%= kind.description %></td>
-        <td><%= link_to 'Show', kind %></td>
-        <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
-        <td><%= link_to 'Destroy', kind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= link_to new_kind_path do %>
+      <% image_tag('if_sign-add_299068.png')%>
     <% end %>
-  </tbody>
-</table>
+    <br/>
 
-<br>
+  <table>
+    <thead>
+      <tr>
+        <th><%= @kinds.model.human_attribute_name("description")%></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<%= link_to 'New Kind', new_kind_path %>
+    <tbody>
+      <% @kinds.each do |kind| %>
+        <tr class="<%= cycle("odd", "even") -%>">
+          <td><%= kind.description %></td>
+          <td>
+              <%= link_to(kind, html_options = {"title" => t('buttons.show')})  do %>
+                <%= image_tag('if_user-id_285641.png')%>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(edit_kind_path(kind), html_options = {"title" => t('buttons.edit')}) do %>
+                <%= image_tag('if_notepad_285631.png')%>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to kind, method: :delete, data: { confirm: t('messages.confirm')}  do %>
+                <%= image_tag('if_sign-error_299045.png')%>
+              <% end %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
+
+

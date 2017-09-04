@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<h1>New Phone</h1>
+<h1><%= phone.model_name.human(count: 1)%></h1>
 
   <div class="field">
     <%= form.label :phone %>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Enviar", class: "button" %>
-    <%= link_to 'Back', phones_path, class: "button" %>
+    <%= form.submit t('buttons.save'), class: "button" %>
+    <%= link_to t('buttons.back'), phones_path, class: "button" %>
   </div>
 <% end %>

@@ -4,8 +4,19 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-#A library for generating fake data such as names, addresses, and phone numbers.
+# A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
+
+gem 'jquery-rails'
+
+# Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms
+gem "cocoon"
+
+# Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
+
+# O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+gem 'lerolero_generator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -40,6 +51,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  gem 'pry-rails'
 end
 
 group :development do

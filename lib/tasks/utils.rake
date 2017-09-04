@@ -6,7 +6,7 @@ namespace :utils do
       Contact.create!(name: Faker::Name.name,
                      email: Faker::Internet.email,
                      kind: Kind.all.sample,
-                     rmk: Faker::Lorem.paragraph([1,2,3,4,5].sample))
+                     rmk: LeroleroGenerator.sentence([1,2,3,4,5].sample))
     end 
     puts "Gerando os Endereços (Contacts)...[OK]"
   

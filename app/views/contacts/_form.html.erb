@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<h1>Contacts</h1>
+<h1><%= contact.model_name.human(count: 1)%></h1>
 
   <div class="field">
     <%= form.label :name %>
@@ -25,17 +25,42 @@
 
   <div class="field">
     <%= form.label :kind_id %>
-    <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description ) %>
-    <%# form.text_field :kind_id, id: :contact_kind_id %>
+    <%= form.collection_select(:kind_id, @kind_options_for_select, :id, :description ) %>
   </div>
 
-  <div class="field">
+  <%= form.fields_for :address do |address_fields|%>
+    <div class="field">
+      <%= address_fields.label :street %>
+      <%= address_fields.text_field :street%>
+    </div>
+    <div class="field">
+      <%= address_fields.label :city %>
+      <%= address_fields.text_field :city%>
+    </div>
+    <div class="field">
+      <%= address_fields.label :state %>
+      <%= address_fields.select :state, options_for_states(@contact.address.state) %>
+    </div>
+   <% end %>
+
+  <div id="phones">
+    <%= form.fields_for :phones do |phones_fields|%>
+      <%= render partial: "phone_fields", locals: { f: phones_fields } %>
+    <% end %>
+    <div class="field">
+      <%= form.label :phones, "-" %>
+      <%= link_to_add_association('[Adicionar Telefone]', form ,:phones)%>
+    </div>
+   </div>
+   <br/>
+
+   <div class="field">
     <%= form.label :rmk %>
     <%= form.text_area :rmk, id: :contact_rmk %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Enviar", class: "button" %>
-    <%= link_to 'Back', contacts_path, class: "button" %>
+    <%= form.submit t('buttons.save'), class: "button" %>
+    <%= link_to t('buttons.back'), contacts_path, class: "button" %>
   </div>
 <% end %>

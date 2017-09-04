@@ -2,10 +2,10 @@
 .basic-grey {
     margin-left:auto;
     margin-right:auto;
-    max-width: 500px;
+    max-width: 700px;
     background: #F7F7F7;
     padding: 25px 15px 25px 10px;
-    font: 12px Georgia, "Times New Roman", Times, serif;
+    font: 16px Georgia, "Times New Roman", Times, serif;
     color: #888;
     text-shadow: 1px 1px 1px #FFF;
     border:1px solid #E4E4E4;
@@ -34,6 +34,9 @@
     margin-top: 10px;
     color: #888;
 }
+table{
+    width: 100%;
+}
 .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
     border: 1px solid #DADADA;
     color: #888;
@@ -44,6 +47,22 @@
     outline: 0 none;
     padding: 3px 3px 3px 5px;
     width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.basic-grey input[type="text"].phone-field{
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 55%;
     font-size: 12px;
     line-height:15px;
     box-shadow: inset 0px 1px 4px #ECECEC;
@@ -80,4 +99,21 @@
 }
 .basic-grey .button:hover {
     background: #CF7A7A
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.odd{
+    background: #f3fbff;
+}
+.even{
+    background: #ffffff;
+}
+
+table tr td {
+    text-align: center;
 }
