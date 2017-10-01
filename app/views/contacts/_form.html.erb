@@ -1,15 +1,4 @@
 <%= form_with(model: contact, local: true, html: {class: "basic-grey"}) do |form| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <h1><%= contact.model_name.human(count: 1)%></h1>
 
@@ -63,4 +52,16 @@
     <%= form.submit t('buttons.save'), class: "button" %>
     <%= link_to t('buttons.back'), contacts_path, class: "button" %>
   </div>
+
+    <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>

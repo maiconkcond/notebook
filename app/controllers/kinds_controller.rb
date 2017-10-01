@@ -4,7 +4,11 @@ class KindsController < ApplicationController
   # GET /kinds
   # GET /kinds.json
   def index
-    @kinds = Kind.all
+
+    respond_to do |format|
+      format.html { @kinds = Kind.all }
+      format.js { render js: @kinds }
+    end
   end
 
   # GET /kinds/1

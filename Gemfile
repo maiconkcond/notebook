@@ -4,10 +4,26 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootstrap'
+end
+
+gem 'bundler', '>= 1.8.4'
+
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
 
+gem 'pry-rails', :group => :development
+
 gem 'jquery-rails'
+
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+
+# Tradução Kaminari i18n
+gem 'kaminari-i18n'
 
 # Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms
 gem "cocoon"
