@@ -1,24 +1,27 @@
-# README
+## Introduçao
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`Notebook` é um projeto realizado com objetivo exclusivamente acadêmico. Realizado seguindo didatica do curso Ruby on Rails do Jackson Pires.
+:mortar_board:
 
-Things you may want to cover:
+## Descriçao
 
-* Ruby version
+Uma agenda de contato simples, onde pode ser realizado as operaçoes de adicionar, editar e remover (CRUD) contatos.
 
-* System dependencies
+Foi estudado nesse projeto
 
-* Configuration
+- MVC
+- ORM e Migrations
+- ERB
+- Helpers
+- Rotas REST
+- Partials
+- Active Record
+- Tasks
+- Associaçoes (Belongs To, Has One e Has Many)
+- i18n
+- Paginaçao
+- Asset pipeline
+- Ajax
 
-* Database creation
+:gem: :gem: :gem: :gem: :gem:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
